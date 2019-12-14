@@ -37,6 +37,9 @@
     <hr />
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
+    <div th:if="${searchType} and ${searchTerm}">
+        <h1 th:text="${#strings.capitalizeWords('Jobs with' + ' ' + searchType + ':' + ' ' + searchTerm)}"></h1>
+        <div th:replace="fragments :: search-list-loop"></div>
 
 </div>
 
